@@ -1,30 +1,218 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>루틴 앱</title>
-  <style>
-    body { font-family: sans-serif; background:#F8FAFC; }
-    .card { background:white; padding:20px; border-radius:20px; margin:20px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>캠퍼스 루틴 | 대학생활의 자율성을 성취감으로</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .pastel-blue { background-color: #B8E1FF; }
+        .pastel-pink { background-color: #FFD1DA; }
+        .pastel-green { background-color: #C1E1C1; }
+        .bg-soft { background-color: #F8FAFC; }
+
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(135deg, #B8E1FF 0%, #FFD1DA 100%);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.4;
+        }
+
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-soft text-gray-800">
 
-  <h1>김루틴 학생 👋</h1>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-glass border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 pastel-blue rounded-lg flex items-center justify-center">
+                    <i class="fa-solid fa-graduation-cap text-blue-800"></i>
+                </div>
+                <span class="text-xl font-black text-gray-800 tracking-tighter">캠퍼스 루틴</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-bold text-gray-600">
+                <a href="#vision" class="hover:text-blue-400 transition">비전</a>
+                <a href="#feature" class="hover:text-blue-400 transition">주요기능</a>
+                <a href="#partnership" class="hover:text-blue-400 transition">제휴문의</a>
+            </div>
+            <button class="bg-gray-800 text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-gray-700 transition">
+                앱 다운로드
+            </button>
+        </div>
+    </nav>
 
-  <div class="card">
-    <h2>보유 포인트</h2>
-    <p>2500P</p>
-  </div>
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 px-6 overflow-hidden">
+        <div class="blob top-[-100px] right-[-100px]"></div>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+            <div class="flex-1 space-y-6">
+                <span class="inline-block px-4 py-1 pastel-blue text-blue-800 rounded-full text-sm font-bold animate-bounce">
+                    🚀 신입생 필수 앱 1위 후보
+                </span>
+                <h1 class="text-4xl md:text-6xl font-black leading-tight">
+                    대학생활의 자율성을<br>
+                    <span class="text-blue-400">성취감</span>으로 바꾸세요
+                </h1>
+                <p class="text-gray-500 text-lg md:text-xl font-medium leading-relaxed">
+                    의지만으로는 부족합니다. <br class="hidden md:block">
+                    경제적 인센티브와 게임화 시스템으로 당신의 '갓생'을 도와드립니다.
+                </p>
+                <div class="flex gap-4 pt-4">
+                    <button class="bg-blue-400 text-white px-8 py-4 rounded-2xl font-black shadow-lg shadow-blue-200 hover:scale-105 transition">
+                        지금 시작하기
+                    </button>
+                    <button class="bg-white border border-gray-100 px-8 py-4 rounded-2xl font-black hover:bg-gray-50 transition">
+                        서비스 소개서
+                    </button>
+                </div>
+            </div>
+            <div class="flex-1 relative">
+                <!-- Mockup Image Placeholder -->
+                <div class="w-full max-w-[300px] mx-auto bg-white rounded-[3rem] border-[8px] border-gray-800 shadow-2xl p-2">
+                   <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80" alt="App Mockup" class="rounded-[2.5rem] w-full">
+                </div>
+                <!-- Floating Labels -->
+                <div class="absolute top-10 right-0 md:right-10 bg-white p-4 rounded-2xl shadow-xl animate-pulse">
+                    <div class="flex items-center gap-2">
+                        <div class="p-2 pastel-pink rounded-lg"><i class="fa-solid fa-heart text-pink-500 text-xs"></i></div>
+                        <span class="text-xs font-bold">도서관 인증 완료!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="card">
-    <h3>나의 루틴</h3>
-    <p>1교시 등교 인증 - 80%</p>
-  </div>
+    <!-- Vision Section -->
+    <section id="vision" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6 text-center space-y-12">
+            <h2 class="text-3xl font-black italic">"왜 캠퍼스 루틴인가요?"</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-soft rounded-3xl space-y-4 card-hover">
+                    <div class="w-12 h-12 pastel-blue rounded-2xl flex items-center justify-center mx-auto">
+                        <i class="fa-solid fa-clock text-blue-600"></i>
+                    </div>
+                    <h3 class="font-black text-xl text-gray-800">시간 관리의 혁신</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        1교시 자체 휴강의 유혹을 뿌리치고 <br> 규칙적인 일상을 되찾아 드립니다.
+                    </p>
+                </div>
+                <div class="p-8 bg-soft rounded-3xl space-y-4 card-hover">
+                    <div class="w-12 h-12 pastel-pink rounded-2xl flex items-center justify-center mx-auto">
+                        <i class="fa-solid fa-coins text-pink-600"></i>
+                    </div>
+                    <h3 class="font-black text-xl text-gray-800">실질적인 리워드</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        단순한 칭찬이 아닌, 학교 앞 식당과 <br> 카페의 실제 쿠폰을 보상으로 받으세요.
+                    </p>
+                </div>
+                <div class="p-8 bg-soft rounded-3xl space-y-4 card-hover">
+                    <div class="w-12 h-12 pastel-green rounded-2xl flex items-center justify-center mx-auto">
+                        <i class="fa-solid fa-location-dot text-green-600"></i>
+                    </div>
+                    <h3 class="font-black text-xl text-gray-800">로컬 상권과의 상생</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">
+                        지역 소상공인에게는 단골을, <br> 학생들에게는 합리적인 소비를 제안합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <button onclick="alert('참여 완료!')">
-    참여하기
-  </button>
+    <!-- Feature Section -->
+    <section id="feature" class="py-20 bg-soft">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="flex-1 order-2 md:order-1">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1610471904123-524679758f8b?w=400&q=80" alt="한강 산책" class="rounded-3xl shadow-lg">
+                        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=400&q=80" alt="도서관" class="rounded-3xl shadow-lg mt-8">
+                    </div>
+                </div>
+                <div class="flex-1 order-1 md:order-2 space-y-6">
+                    <h2 class="text-4xl font-black">
+                        지정된 장소에서<br>
+                        <span class="text-blue-400">GPS로 인증</span>하세요
+                    </h2>
+                    <p class="text-gray-500 font-medium">
+                        대리 출석이나 부정 인증은 불가능합니다. <br>
+                        강의실, 도서관, 학생식당 등 Geofencing 기술을 활용해 <br>
+                        가장 신뢰할 수 있는 습관 인증 시스템을 구축했습니다.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-circle-check text-blue-400"></i>
+                            <span class="font-bold text-gray-700">실시간 위치 기반 자동 체크인</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-circle-check text-blue-400"></i>
+                            <span class="font-bold text-gray-700">AI 기반 사진 검증 시스템</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Section -->
+    <section id="partnership" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+            <div class="inline-block p-3 pastel-pink rounded-2xl mb-4">
+                <i class="fa-solid fa-handshake text-pink-600 text-2xl"></i>
+            </div>
+            <h2 class="text-4xl font-black">대학 앞 사장님이신가요?</h2>
+            <p class="text-gray-500">
+                캠퍼스 루틴과 함께라면 타겟 대학생 고객에게 <br>
+                확실한 방문 유도와 단골 확보가 가능합니다. 지금 파트너가 되어보세요.
+            </p>
+            <form class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto pt-6">
+                <input type="email" placeholder="이메일 주소를 입력해주세요" class="flex-1 px-6 py-4 bg-soft border border-gray-100 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-200">
+                <button type="button" class="bg-gray-800 text-white px-8 py-4 rounded-2xl font-black hover:bg-gray-700 transition">문의하기</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-soft py-12 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <div class="flex items-center gap-2 justify-center md:justify-start mb-4">
+                    <div class="w-6 h-6 pastel-blue rounded flex items-center justify-center">
+                        <i class="fa-solid fa-graduation-cap text-[10px] text-blue-800"></i>
+                    </div>
+                    <span class="font-black text-sm">캠퍼스 루틴</span>
+                </div>
+                <p class="text-[10px] text-gray-400">© 2024 Campus Routine Co., Ltd. All rights reserved.</p>
+                <p class="text-[10px] text-gray-400 mt-1">서울특별시 마포구 백범로 35 (캠퍼스 타운)</p>
+            </div>
+            <div class="flex gap-6 text-gray-400">
+                <i class="fa-brands fa-instagram text-xl hover:text-pink-400 transition cursor-pointer"></i>
+                <i class="fa-brands fa-youtube text-xl hover:text-red-400 transition cursor-pointer"></i>
+                <i class="fa-solid fa-envelope text-xl hover:text-blue-400 transition cursor-pointer"></i>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
